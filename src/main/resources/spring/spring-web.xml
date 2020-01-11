@@ -21,7 +21,7 @@
     ></bean>
 
     <!--定义扫描装载的包-->
-    <context:component-scan base-package="com.*.controller"></context:component-scan>
+    <context:component-scan base-package="com.*"></context:component-scan>
 
     <!--定义数据自动转json视图输出-->
     <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">

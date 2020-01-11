@@ -7,7 +7,7 @@
     <resultMap id="userMap" type="com.user.pojo.User">
         <id property="name" column="name"></id>
     </resultMap>
-    <insert id="insert" parameterType="com.user.pojo.User">
+    <insert id="insertUser" parameterType="com.user.pojo.User">
       INSERT INTO users (name) VALUES (#{name})
     </insert>
 

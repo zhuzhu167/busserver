@@ -14,7 +14,8 @@ public enum ExceptionEnum {
 
     UNKNOW_ERROR(-1, "未知错误"),
     USER_NOT_FIND(-101, "用户不存在"),
-    DUPLICATE_KET(1062,"重复键")
+    DUPLICATE_KET(1062,"数据已经存在"),
+    SERVER_EXECUTION_ERROR(-2,"服务器执行错误")
     ;
 
     private Integer code;

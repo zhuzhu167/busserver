@@ -1,10 +1,15 @@
 package com.user.service.impl;
 
+import com.common.result.Result;
+import com.common.result.ResultUtil;
 import com.user.dao.UserDao;
 import com.user.pojo.User;
 import com.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author liangzhu
@@ -20,9 +25,17 @@ public class UserServiceImpl implements UserService {
     private UserDao userDao;
 
     @Override
-    public int insertUser(String name) {
-        User user = new User();
-        user.setName(name);
-        return userDao.insert(user);
+    @Transactional(propagation = Propagation.REQUIRES_NEW, isolation = Isolation.READ_COMMITTED)
+    public Object insertUser(String name) {
+        Result result;
+//        try {
+            User user = new User();
+            user.setName(name);
+            result = ResultUtil.success(userDao.insertUser(user));
+//        } catch (Exception e) {
+//            System.out.println(e+"---------------------------------");
+//            result = ResultUtil.error(401, "插入失败");
+//        }
+        return result;
     }
 }

@@ -2,23 +2,24 @@
 <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
 <log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'
                      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                     xsi:schemaLocation="http://jakarta.apache.org/log4j/ ">
+                     xsi:schemaLocation="http://jakarta.apache.org/log4j/
+http://jakarta.apache.org/log4j/ ">
 
     <!--ConsoleAppender：输出到控制台-->
-<!--    <appender name="STDOUT" class="org.apache.log4j.ConsoleAppender">-->
-<!--        &lt;!&ndash;<param name="encoding" value="UTF-8"/>&ndash;&gt;-->
-<!--        <layout class="org.apache.log4j.PatternLayout">-->
-<!--            <param name="ConversionPattern" value="%d [%t] %p - %m%n"/>-->
-<!--        </layout>-->
-<!--        <filter class="org.apache.log4j.varia.LevelRangeFilter">-->
-<!--            &lt;!&ndash; 设置日志输出的最小级别 &ndash;&gt;-->
-<!--            <param name="levelMin" value="DEBUG"/>-->
-<!--            &lt;!&ndash; 设置日志输出的最大级别 &ndash;&gt;-->
-<!--            <param name="levelMax" value="FATAL"/>-->
-<!--            &lt;!&ndash; 设置日志输出的xxx，默认是false &ndash;&gt;-->
-<!--            <param name="AcceptOnMatch" value="true"/>-->
-<!--        </filter>-->
-<!--    </appender>-->
+    <!--    <appender name="STDOUT" class="org.apache.log4j.ConsoleAppender">-->
+    <!--        &lt;!&ndash;<param name="encoding" value="UTF-8"/>&ndash;&gt;-->
+    <!--        <layout class="org.apache.log4j.PatternLayout">-->
+    <!--            <param name="ConversionPattern" value="%d [%t] %p - %m%n"/>-->
+    <!--        </layout>-->
+    <!--        <filter class="org.apache.log4j.varia.LevelRangeFilter">-->
+    <!--            &lt;!&ndash; 设置日志输出的最小级别 &ndash;&gt;-->
+    <!--            <param name="levelMin" value="DEBUG"/>-->
+    <!--            &lt;!&ndash; 设置日志输出的最大级别 &ndash;&gt;-->
+    <!--            <param name="levelMax" value="FATAL"/>-->
+    <!--            &lt;!&ndash; 设置日志输出的xxx，默认是false &ndash;&gt;-->
+    <!--            <param name="AcceptOnMatch" value="true"/>-->
+    <!--        </filter>-->
+    <!--    </appender>-->
 
     <!--输出到日志文件-->
     <appender name="PROJECT" class="org.apache.log4j.DailyRollingFileAppender">

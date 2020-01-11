@@ -27,22 +27,10 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    private ExceptionHandle exceptionHandle;
-
     @RequestMapping(value = "/test", method = RequestMethod.GET)
     @ResponseBody
     public Object test(@RequestParam("name") String name) {
-        Result result = new Result();
-        try {
-            if (userService.insertUser(name) == 1) {
-                result = ResultUtil.success("插入成功");
-            } else {
-                result = ResultUtil.error(400, "插入失败");
-            }
-        } catch (Exception e) {
-            result = this.exceptionHandle.exceptionGet(e);
-        }
-        return result;
+        return userService.insertUser(name);
     }
 
     @RequestMapping(value = "/test1", method = RequestMethod.GET)

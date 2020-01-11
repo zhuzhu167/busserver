@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.user.dao.UserDao">
+    <resultMap id="userMap" type="com.user.pojo.User">
+        <id property="name" column="name"></id>
+    </resultMap>
+    <insert id="insert" parameterType="com.user.pojo.User">
+      INSERT INTO users (name) VALUES (#{name})
+    </insert>
+
+</mapper>

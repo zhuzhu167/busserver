@@ -1,0 +1,183 @@
+2020-01-11 10:28:33,371 [] INFO  context.ContextLoader - Root WebApplicationContext: initialization started
+2020-01-11 10:28:36,041 [] INFO  context.ContextLoader - Root WebApplicationContext initialized in 2669 ms
+2020-01-11 10:28:40,356 [] INFO  servlet.DispatcherServlet - Initializing Servlet 'springmvc'
+2020-01-11 10:28:41,043 [] INFO  servlet.DispatcherServlet - Completed initialization in 687 ms
+2020-01-11 10:28:41,096 [] INFO  aop.LogAspect - url=http://localhost:8080/user/test.do
+2020-01-11 10:28:41,096 [] INFO  aop.LogAspect - method=GET
+2020-01-11 10:28:41,097 [] INFO  aop.LogAspect - id=0:0:0:0:0:0:0:1
+2020-01-11 10:28:41,097 [] INFO  aop.LogAspect - class_method=com.user.service.UserService,insertUser
+2020-01-11 10:28:41,097 [] INFO  aop.LogAspect - args=sndjas
+2020-01-11 10:28:41,163 [] INFO  pool.DruidDataSource - {dataSource-1} inited
+2020-01-11 10:28:41,631 [] INFO  aop.LogAspect - response=org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'sndjas' for key 'PRIMARY'
+### The error may involve com.user.dao.UserDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO users (name) VALUES (?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'sndjas' for key 'PRIMARY'
+; Duplicate entry 'sndjas' for key 'PRIMARY'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'sndjas' for key 'PRIMARY'
+2020-01-11 10:29:24,850 [] INFO  pool.DruidDataSource - {dataSource-1} closed
+2020-01-11 10:29:26,760 [] INFO  context.ContextLoader - Root WebApplicationContext: initialization started
+2020-01-11 10:29:28,894 [] INFO  context.ContextLoader - Root WebApplicationContext initialized in 2133 ms
+2020-01-11 10:29:46,531 [] INFO  servlet.DispatcherServlet - Initializing Servlet 'springmvc'
+2020-01-11 10:29:47,041 [] INFO  servlet.DispatcherServlet - Completed initialization in 509 ms
+2020-01-11 10:29:47,091 [] INFO  aop.LogAspect - url=http://localhost:8080/user/test.do
+2020-01-11 10:29:47,091 [] INFO  aop.LogAspect - method=GET
+2020-01-11 10:29:47,091 [] INFO  aop.LogAspect - id=0:0:0:0:0:0:0:1
+2020-01-11 10:29:47,091 [] INFO  aop.LogAspect - class_method=com.user.service.UserService,insertUser
+2020-01-11 10:29:47,091 [] INFO  aop.LogAspect - args=sndjas
+2020-01-11 10:29:47,137 [] INFO  pool.DruidDataSource - {dataSource-1} inited
+2020-01-11 10:29:47,413 [] INFO  aop.LogAspect - response=org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'sndjas' for key 'PRIMARY'
+### The error may involve com.user.dao.UserDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO users (name) VALUES (?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'sndjas' for key 'PRIMARY'
+; Duplicate entry 'sndjas' for key 'PRIMARY'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'sndjas' for key 'PRIMARY'
+2020-01-11 10:29:55,566 [] INFO  aop.LogAspect - url=http://localhost:8080/user/test.do
+2020-01-11 10:29:55,567 [] INFO  aop.LogAspect - method=GET
+2020-01-11 10:29:55,567 [] INFO  aop.LogAspect - id=0:0:0:0:0:0:0:1
+2020-01-11 10:29:55,567 [] INFO  aop.LogAspect - class_method=com.user.service.UserService,insertUser
+2020-01-11 10:29:55,567 [] INFO  aop.LogAspect - args=sndjas
+2020-01-11 10:29:55,569 [] INFO  aop.LogAspect - response=org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'sndjas' for key 'PRIMARY'
+### The error may involve com.user.dao.UserDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO users (name) VALUES (?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'sndjas' for key 'PRIMARY'
+; Duplicate entry 'sndjas' for key 'PRIMARY'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'sndjas' for key 'PRIMARY'
+2020-01-11 10:30:01,758 [] INFO  pool.DruidDataSource - {dataSource-1} closed
+2020-01-11 10:30:10,393 [] INFO  context.ContextLoader - Root WebApplicationContext: initialization started
+2020-01-11 10:30:12,936 [] INFO  context.ContextLoader - Root WebApplicationContext initialized in 2542 ms
+2020-01-11 10:30:20,455 [] INFO  servlet.DispatcherServlet - Initializing Servlet 'springmvc'
+2020-01-11 10:30:21,036 [] INFO  servlet.DispatcherServlet - Completed initialization in 581 ms
+2020-01-11 10:30:21,086 [] INFO  aop.LogAspect - url=http://localhost:8080/user/test.do
+2020-01-11 10:30:21,086 [] INFO  aop.LogAspect - method=GET
+2020-01-11 10:30:21,086 [] INFO  aop.LogAspect - id=0:0:0:0:0:0:0:1
+2020-01-11 10:30:21,087 [] INFO  aop.LogAspect - class_method=com.user.service.UserService,insertUser
+2020-01-11 10:30:21,087 [] INFO  aop.LogAspect - args=dfjdfn
+2020-01-11 10:30:21,151 [] INFO  pool.DruidDataSource - {dataSource-1} inited
+2020-01-11 10:30:21,558 [] INFO  aop.LogAspect - response=1
+2020-01-11 10:30:23,709 [] INFO  aop.LogAspect - url=http://localhost:8080/user/test.do
+2020-01-11 10:30:23,709 [] INFO  aop.LogAspect - method=GET
+2020-01-11 10:30:23,709 [] INFO  aop.LogAspect - id=0:0:0:0:0:0:0:1
+2020-01-11 10:30:23,709 [] INFO  aop.LogAspect - class_method=com.user.service.UserService,insertUser
+2020-01-11 10:30:23,709 [] INFO  aop.LogAspect - args=dfjdfn
+2020-01-11 10:30:23,766 [] INFO  aop.LogAspect - response=org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'dfjdfn' for key 'PRIMARY'
+### The error may involve com.user.dao.UserDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO users (name) VALUES (?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'dfjdfn' for key 'PRIMARY'
+; Duplicate entry 'dfjdfn' for key 'PRIMARY'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'dfjdfn' for key 'PRIMARY'
+2020-01-11 10:34:52,357 [] INFO  pool.DruidDataSource - {dataSource-1} closed
+2020-01-11 10:34:54,203 [] INFO  context.ContextLoader - Root WebApplicationContext: initialization started
+2020-01-11 10:34:56,752 [] INFO  context.ContextLoader - Root WebApplicationContext initialized in 2547 ms
+2020-01-11 10:35:02,370 [] INFO  servlet.DispatcherServlet - Initializing Servlet 'springmvc'
+2020-01-11 10:35:02,880 [] INFO  servlet.DispatcherServlet - Completed initialization in 508 ms
+2020-01-11 10:35:02,927 [] INFO  aop.LogAspect - url=http://localhost:8080/user/test.do
+2020-01-11 10:35:02,927 [] INFO  aop.LogAspect - method=GET
+2020-01-11 10:35:02,927 [] INFO  aop.LogAspect - id=0:0:0:0:0:0:0:1
+2020-01-11 10:35:02,927 [] INFO  aop.LogAspect - class_method=com.user.service.UserService,insertUser
+2020-01-11 10:35:02,927 [] INFO  aop.LogAspect - args=dfjdfn
+2020-01-11 10:35:02,972 [] INFO  pool.DruidDataSource - {dataSource-1} inited
+2020-01-11 10:35:03,220 [] INFO  aop.LogAspect - response=org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'dfjdfn' for key 'PRIMARY'
+### The error may involve com.user.dao.UserDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO users (name) VALUES (?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'dfjdfn' for key 'PRIMARY'
+; Duplicate entry 'dfjdfn' for key 'PRIMARY'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'dfjdfn' for key 'PRIMARY'
+2020-01-11 10:35:08,091 [] INFO  pool.DruidDataSource - {dataSource-1} closed
+2020-01-11 10:35:16,648 [] INFO  context.ContextLoader - Root WebApplicationContext: initialization started
+2020-01-11 10:35:19,135 [] INFO  context.ContextLoader - Root WebApplicationContext initialized in 2486 ms
+2020-01-11 10:35:23,827 [] INFO  servlet.DispatcherServlet - Initializing Servlet 'springmvc'
+2020-01-11 10:35:24,522 [] INFO  servlet.DispatcherServlet - Completed initialization in 695 ms
+2020-01-11 10:35:24,573 [] INFO  aop.LogAspect - url=http://localhost:8080/user/test.do
+2020-01-11 10:35:24,573 [] INFO  aop.LogAspect - method=GET
+2020-01-11 10:35:24,573 [] INFO  aop.LogAspect - id=0:0:0:0:0:0:0:1
+2020-01-11 10:35:24,573 [] INFO  aop.LogAspect - class_method=com.user.service.UserService,insertUser
+2020-01-11 10:35:24,573 [] INFO  aop.LogAspect - args=dfjdfn
+2020-01-11 10:35:24,635 [] INFO  pool.DruidDataSource - {dataSource-1} inited
+2020-01-11 10:35:25,053 [] INFO  aop.LogAspect - response=org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'dfjdfn' for key 'PRIMARY'
+### The error may involve com.user.dao.UserDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO users (name) VALUES (?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'dfjdfn' for key 'PRIMARY'
+; Duplicate entry 'dfjdfn' for key 'PRIMARY'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'dfjdfn' for key 'PRIMARY'
+2020-01-11 10:36:40,106 [] INFO  pool.DruidDataSource - {dataSource-1} closed
+2020-01-11 10:36:50,974 [] INFO  context.ContextLoader - Root WebApplicationContext: initialization started
+2020-01-11 10:36:53,475 [] WARN  support.XmlWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'UserController': Unsatisfied dependency expressed through field 'exceptionHandle'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.common.exception.ExceptionHandle' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-01-11 10:36:53,480 [] ERROR context.ContextLoader - Context initialization failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'UserController': Unsatisfied dependency expressed through field 'exceptionHandle'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.common.exception.ExceptionHandle' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:639)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:116)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:397)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1429)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:401)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:292)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:103)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4682)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5150)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:713)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:690)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:695)
+	at org.apache.catalina.startup.HostConfig.manageApp(HostConfig.java:1729)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:289)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:819)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at org.apache.catalina.mbeans.MBeanFactory.createStandardContext(MBeanFactory.java:457)
+	at org.apache.catalina.mbeans.MBeanFactory.createStandardContext(MBeanFactory.java:406)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:289)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:819)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:801)
+	at com.sun.jmx.remote.security.MBeanServerAccessController.invoke(MBeanServerAccessController.java:468)
+	at javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1468)
+	at javax.management.remote.rmi.RMIConnectionImpl.access$300(RMIConnectionImpl.java:76)
+	at javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1309)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1408)
+	at javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:829)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:346)
+	at sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:568)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:826)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:683)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:682)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.common.exception.ExceptionHandle' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1695)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1253)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:636)
+	... 62 more
+2020-01-11 10:38:45,034 [] INFO  context.ContextLoader - Root WebApplicationContext: initialization started
+2020-01-11 10:38:47,483 [] INFO  context.ContextLoader - Root WebApplicationContext initialized in 2448 ms

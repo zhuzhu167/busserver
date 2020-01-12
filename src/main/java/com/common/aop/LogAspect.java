@@ -1,9 +1,7 @@
 package com.common.aop;
 
 import com.common.exception.ExceptionHandle;
-import com.common.result.Result;
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.ProceedingJoinPoint;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
 import org.aspectj.lang.annotation.*;
@@ -21,22 +19,17 @@ import javax.servlet.http.HttpServletRequest;
  * @date 2020-01-1021:24
  */
 @Aspect
-@Component
 public class LogAspect {
 
     private final static Logger LOGGER = LoggerFactory.getLogger(LogAspect.class);
 
-
-    private ExceptionHandle exceptionHandle;
-
-    @Pointcut("execution(public * com.*.service.*.*(..))")
+    @Pointcut("execution(public * com.*.controller.*.*(..))")
     public void log() {
 
     }
 
     @Before("log()")
     public void doBefore(JoinPoint joinPoint) {
-
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = attributes.getRequest();
         System.out.println("---------------------------------请求信息---------------------------------");

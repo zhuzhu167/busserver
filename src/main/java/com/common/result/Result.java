@@ -22,6 +22,16 @@ public class Result<T> {
     //    content 返回体报文的出参，使用泛型兼容不同的类型
     private T data;
 
+    public Result() {
+
+    }
+
+    public Result(Result result) {
+        this.status = result.status;
+        this.msg = result.msg;
+        this.data = (T) result.data;
+    }
+
     @Override
     public String toString() {
         return "Result{" +

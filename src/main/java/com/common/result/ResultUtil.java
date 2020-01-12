@@ -12,10 +12,11 @@ import com.common.exception.ExceptionEnum;
 public class ResultUtil {
     /**
      * 返回成功，传入返回体具体出參
+     *
      * @param object
      * @return
      */
-    public static Result success(Object object){
+    public static Result success(Object object) {
         Result result = new Result();
         result.setStatus(0);
         result.setMsg("success");
@@ -25,19 +26,21 @@ public class ResultUtil {
 
     /**
      * 提供给部分不需要出參的接口
+     *
      * @return
      */
-    public static Result success(){
+    public static Result success() {
         return success(null);
     }
 
     /**
      * 自定义错误信息
+     *
      * @param code
      * @param msg
      * @return
      */
-    public static Result error(Integer code,String msg){
+    public static Result error(Integer code, String msg) {
         Result result = new Result();
         result.setStatus(code);
         result.setMsg(msg);
@@ -47,10 +50,11 @@ public class ResultUtil {
 
     /**
      * 返回异常信息，在已知的范围内
+     *
      * @param exceptionEnum
      * @return
      */
-    public static Result error(ExceptionEnum exceptionEnum){
+    public static Result error(ExceptionEnum exceptionEnum) {
         Result result = new Result();
         result.setStatus(exceptionEnum.getCode());
         result.setMsg(exceptionEnum.getMsg());

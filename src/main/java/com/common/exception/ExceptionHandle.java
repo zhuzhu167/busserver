@@ -30,9 +30,10 @@ public class ExceptionHandle {
     @ExceptionHandler
     @ResponseBody
     public Result exceptionGet(Exception e) {
-        System.out.println("---------------------------------全局异常捕捉---------------------------------");
+        System.out.println("---------------------------------异常捕捉---------------------------------");
+        System.out.println(e);
         LOGGER.error("【系统异常】{}", e);
-        Result result = new Result();
+        Result result;
         if (e instanceof DuplicateKeyException) {
             result = ResultUtil.error(ExceptionEnum.DUPLICATE_KET);
         } else if (e instanceof RuntimeException || e instanceof RuntimeException) {

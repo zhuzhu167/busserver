@@ -11,6 +11,13 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface UserDao {
-    public int insertUser(User user);
+    int insert(User user);
+
+    int delete(String id);
+
+    int update(User user);
+
+    User selectById(String id);
+
 }
 

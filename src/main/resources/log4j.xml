@@ -72,6 +72,5 @@ http://jakarta.apache.org/log4j/ ">
         <appender-ref ref="PROJECT"/>
         <appender-ref ref="PROJECT-DEBUG"/>
         <appender-ref ref="PROJECT-ERROR"/>
-        <appender-ref ref="STDOUT"/>
     </root>
 </log4j:configuration>

@@ -27,15 +27,39 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "/test", method = RequestMethod.GET)
+    @RequestMapping(value = "/insertUser", method = RequestMethod.GET)
     @ResponseBody
-    public Object test(@RequestParam("name") String name) {
-        return userService.insertUser(name);
+    public Object insertUser(@RequestParam("id") String id,@RequestParam("name") String name) {
+        User user = new User();
+        user.setId(id);
+        user.setName(name);
+        return userService.insert(user);
     }
 
-    @RequestMapping(value = "/test1", method = RequestMethod.GET)
+    @RequestMapping(value = "/deleteUser", method = RequestMethod.GET)
     @ResponseBody
-    public User test1() {
+    public Object deleteUser(@RequestParam("id") String id) {
+        return userService.delete(id);
+    }
+
+    @RequestMapping(value = "/updateUser", method = RequestMethod.GET)
+    @ResponseBody
+    public Object updateUser(@RequestParam("id") String id,@RequestParam("name") String name) {
+        User user = new User();
+        user.setId(id);
+        user.setName(name);
+        return userService.update(user);
+    }
+
+    @RequestMapping(value = "/selectUser", method = RequestMethod.GET)
+    @ResponseBody
+    public Object selectUser(@RequestParam("id") String id) {
+        return userService.select(id);
+    }
+
+    @RequestMapping(value = "/test", method = RequestMethod.GET)
+    @ResponseBody
+    public User test() {
         User user = new User();
         user.setName("zhuzhu");
         return user;

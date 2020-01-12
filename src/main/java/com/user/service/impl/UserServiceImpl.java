@@ -24,18 +24,28 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserDao userDao;
 
+
     @Override
     @Transactional(propagation = Propagation.REQUIRES_NEW, isolation = Isolation.READ_COMMITTED)
-    public Object insertUser(String name) {
-        Result result;
-//        try {
-            User user = new User();
-            user.setName(name);
-            result = ResultUtil.success(userDao.insertUser(user));
-//        } catch (Exception e) {
-//            System.out.println(e+"---------------------------------");
-//            result = ResultUtil.error(401, "插入失败");
-//        }
-        return result;
+    public Object insert(User user) {
+        return new Result(ResultUtil.success(userDao.insert(user)));
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.REQUIRES_NEW, isolation = Isolation.READ_COMMITTED)
+    public Object delete(String id) {
+        return new Result(ResultUtil.success(userDao.delete(id)));
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.REQUIRES_NEW, isolation = Isolation.READ_COMMITTED)
+    public Object update(User user) {
+        return new Result(ResultUtil.success(userDao.update(user)));
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.REQUIRES_NEW, isolation = Isolation.READ_COMMITTED)
+    public Object select(String id) {
+        return new Result(ResultUtil.success(userDao.selectById(id)));
     }
 }

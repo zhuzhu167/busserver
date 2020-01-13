@@ -33,8 +33,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional(propagation = Propagation.REQUIRES_NEW, isolation = Isolation.READ_COMMITTED)
-    public Object delete(String id) {
-        return new Result(ResultUtil.success(userDao.delete(id)));
+    public Object delete(User user) {
+        return new Result(ResultUtil.success(userDao.delete(user)));
     }
 
     @Override
@@ -46,6 +46,6 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional(propagation = Propagation.REQUIRES_NEW, isolation = Isolation.READ_COMMITTED)
     public Object select(String id) {
-        return new Result(ResultUtil.success(userDao.selectById(id)));
+        return new Result(ResultUtil.success(userDao.selectById(id).toString()));
     }
 }

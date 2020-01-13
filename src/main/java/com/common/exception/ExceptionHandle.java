@@ -2,10 +2,13 @@ package com.common.exception;
 
 import com.common.result.Result;
 import com.common.result.ResultUtil;
+import com.sun.deploy.net.HttpResponse;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletResponse;
 
 
 /**
@@ -16,31 +19,24 @@ import org.springframework.web.bind.annotation.*;
  * @date 2020-01-1021:26
  */
 @ControllerAdvice
-@ResponseStatus
 public class ExceptionHandle {
 
     private final static Logger LOGGER = LoggerFactory.getLogger(ExceptionHandle.class);
 
     /**
-     * 判断错误是否是已定义的已知错误，不是则由未知错误代替，同时记录在log中
+     * 全局捕捉异常
      *
      * @param e
+     * @param httpServletResponse
      * @return
      */
     @ExceptionHandler
     @ResponseBody
-    public Result exceptionGet(Exception e) {
-        System.out.println("---------------------------------异常捕捉---------------------------------");
-        System.out.println(e);
-        LOGGER.error("【系统异常】{}", e);
-        Result result;
-        if (e instanceof DuplicateKeyException) {
-            result = ResultUtil.error(ExceptionEnum.DUPLICATE_KET);
-        } else if (e instanceof RuntimeException || e instanceof RuntimeException) {
-            result = ResultUtil.error(ExceptionEnum.SERVER_EXECUTION_ERROR);
-        } else {
-            result = ResultUtil.error(ExceptionEnum.UNKNOW_ERROR);
-        }
+    public Result exceptionGet(Exception e, HttpServletResponse httpServletResponse) {
+        LOGGER.error("---------------------------------异常捕捉---------------------------------");
+        LOGGER.error(e.getClass().toString());
+        Result result = ResultUtil.error(ExceptionEnum.isEnumDefined(e.getClass().toString()));
+        httpServletResponse.setStatus(result.getStatus());
         return result;
     }
 }

@@ -1,8 +1,5 @@
 package com.user.controller;
 
-import com.common.exception.ExceptionHandle;
-import com.common.result.Result;
-import com.common.result.ResultUtil;
 import com.user.pojo.User;
 import com.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +26,7 @@ public class UserController {
 
     @RequestMapping(value = "/insertUser", method = RequestMethod.GET)
     @ResponseBody
-    public Object insertUser(@RequestParam("id") String id,@RequestParam("name") String name) {
+    public Object insertUser(@RequestParam(value = "id",required = true) String id,@RequestParam("name") String name) {
         User user = new User();
         user.setId(id);
         user.setName(name);
@@ -38,13 +35,15 @@ public class UserController {
 
     @RequestMapping(value = "/deleteUser", method = RequestMethod.GET)
     @ResponseBody
-    public Object deleteUser(@RequestParam("id") String id) {
-        return userService.delete(id);
+    public Object deleteUser(@RequestParam(value = "id",required = true) String id) {
+        User user = new User();
+        user.setId(id);
+        return userService.delete(user);
     }
 
     @RequestMapping(value = "/updateUser", method = RequestMethod.GET)
     @ResponseBody
-    public Object updateUser(@RequestParam("id") String id,@RequestParam("name") String name) {
+    public Object updateUser(@RequestParam(value = "id",required = true) String id,@RequestParam("name") String name) {
         User user = new User();
         user.setId(id);
         user.setName(name);
@@ -53,7 +52,7 @@ public class UserController {
 
     @RequestMapping(value = "/selectUser", method = RequestMethod.GET)
     @ResponseBody
-    public Object selectUser(@RequestParam("id") String id) {
+    public Object selectUser(@RequestParam(value = "id",required = true) String id) {
         return userService.select(id);
     }
 

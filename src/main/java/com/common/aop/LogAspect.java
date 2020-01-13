@@ -1,11 +1,12 @@
 package com.common.aop;
 
-import com.common.exception.ExceptionHandle;
+import com.common.exception.ExceptionEnum;
+import com.common.result.Result;
+import com.common.result.ResultUtil;
 import org.aspectj.lang.JoinPoint;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
 import org.aspectj.lang.annotation.*;
-import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
@@ -23,20 +24,25 @@ public class LogAspect {
 
     private final static Logger LOGGER = LoggerFactory.getLogger(LogAspect.class);
 
+    /**
+     * 切入点
+     */
     @Pointcut("execution(public * com.*.controller.*.*(..))")
     public void log() {
 
     }
 
+    /**
+     * 执行方法前
+     *
+     * @param joinPoint
+     * @return
+     */
     @Before("log()")
     public void doBefore(JoinPoint joinPoint) {
+        LOGGER.info("---------------------------------LogAspect---------------------------------");
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = attributes.getRequest();
-        System.out.println("---------------------------------请求信息---------------------------------");
-        System.out.println("url=" + request.getRequestURL());
-        System.out.println("method=" + request.getMethod());
-        System.out.println("class.method=" + joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName());
-        System.out.println("args=" + joinPoint.getArgs());
         //url
         LOGGER.info("url={}", request.getRequestURL());
         //method
@@ -49,9 +55,14 @@ public class LogAspect {
         LOGGER.info("args={}", joinPoint.getArgs());
     }
 
-    @AfterReturning(pointcut = "log()", returning = "object")//打印输出结果
-    public void doAfterReturing(Object object) {
-        System.out.println("---------------------------------执行结果---------------------------------\n" + object.toString());
-        LOGGER.info("response={}", object.toString());
+    /**
+     * 方法执行成功后
+     *
+     * @param result
+     * @return
+     */
+    @AfterReturning(pointcut = "log()", returning = "result")
+    public void doAfterReturing(Result result) {
+        LOGGER.info("response={}", result.toString());
     }
 }

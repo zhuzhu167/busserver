@@ -10,4 +10,5 @@
     <!-- 切面设置 -->
     <aop:aspectj-autoproxy/>
     <bean class="com.common.aop.LogAspect" />
+    <bean class="com.common.aop.ResultAspect" />
 </beans>

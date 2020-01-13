@@ -10,7 +10,7 @@
     <insert id="insert" parameterType="com.user.pojo.User">
       insert into users (id,name) values (#{id,jdbcType=VARCHAR},#{name,jdbcType=VARCHAR})
     </insert>
-    <delete id="delete" parameterType="java.lang.String">
+    <delete id="delete" parameterType="com.user.pojo.User">
     delete from users where id = #{id,jdbcType=VARCHAR}
     </delete>
     <update id="update" parameterType="com.user.pojo.User">

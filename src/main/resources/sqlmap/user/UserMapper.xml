@@ -5,8 +5,7 @@
 
 <mapper namespace="com.user.dao.UserDao">
     <resultMap id="userMap" type="com.user.pojo.User">
-        <id property="userid" column="userid"></id>
-        <result property="loginName" column="loginName"></result>
+        <id property="loginName" column="loginName"></id>
         <result property="password" column="password"></result>
         <result property="userName" column="userName"></result>
         <result property="phone" column="phone"></result>
@@ -15,10 +14,10 @@
         <result property="atime" column="atime"></result>
     </resultMap>
     <insert id="insert" parameterType="com.user.pojo.User">
-      insert into t_users (userid,loginName,password,userName,phone,is_use,mtime,atime)
-      values (#{userid,jdbcType=CHAR},#{loginName,jdbcType=VARCHAR},
+      insert into t_users (loginName,password,userName,phone,is_use,mtime,atime)
+      values (#{loginName,jdbcType=VARCHAR},
       #{password,jdbcType=VARCHAR},#{userName,jdbcType=VARCHAR},
-      #{phone,jdbcType=INTEGER},#{isUse,jdbcType=INTEGER},
+      #{phone,jdbcType=CHAR},#{isUse,jdbcType=INTEGER},
       NOW(),NOW())
     </insert>
 </mapper>

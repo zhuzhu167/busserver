@@ -14,6 +14,7 @@ public enum ExceptionEnum {
     MissingServletRequestParameterException(400, "需传递的参数为空"),
     DuplicateKeyException(400, "该数据已经存在"),
     NullPointerException(400, "无可操作数据，受影响记录数为0"),
+    DataIntegrityViolationException(400,"传入参数与数据库定义的类型不一致"),
     SERVER_EXECUTION_ERROR(404, "服务器执行错误"),
     UNKNOW_ERROR(500, "未知错误"),
     ;

@@ -33,7 +33,6 @@ public class UserServiceImpl implements UserService {
     @Transactional(propagation = Propagation.REQUIRES_NEW, isolation = Isolation.READ_COMMITTED)
     public Object insert(Object object) {
         User user = MapperUtils.map(User.class, object);
-        user.setUserid(GetUUID.getUUID(64,true));
         user.setIsUse(1);
         return new Result(ResultUtil.success(userDao.insert(user)));
     }

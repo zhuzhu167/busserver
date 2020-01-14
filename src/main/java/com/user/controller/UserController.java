@@ -22,18 +22,17 @@ import org.springframework.web.bind.annotation.*;
  * @date 2020-01-0816:04
  */
 
-@Api(tags = "用户")
-@Controller("UserController")
+@RestController
+@Api(description = "用户模块")
 @RequestMapping("/user")
 public class UserController {
 
     @Autowired
     private UserService userService;
 
-    @ResponseBody
-    @RequestMapping(value = "/insertUser", method = RequestMethod.POST)
-    @ApiOperation(value="添加用户",httpMethod="POST",notes="添加新用户",response= UserVo.class)
-    public Object insertUser(@ApiParam(required=true,name="用户信息")@RequestBody UserVo userVo) {
+    @PostMapping("insertUser")
+    @ApiOperation(value="添加用户",response= Result.class)
+    public Object insertUser(@RequestBody UserVo userVo) {
         return userService.insert(userVo);
     }
 
@@ -64,8 +63,6 @@ public class UserController {
     @ResponseBody
     public User test() {
         User user = new User();
-        user.setUserid(GetUUID.getUUID(64,true));
-        System.out.println(GetNowDate.getDate());
         return user;
     }
 }

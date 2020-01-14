@@ -11,10 +11,9 @@ import lombok.Data;
  */
 @Data
 public class User {
-    private String userid;
     private String loginName;
     private String password;
     private String userName;
-    private int phone;
+    private String phone;
     private int isUse;
 }

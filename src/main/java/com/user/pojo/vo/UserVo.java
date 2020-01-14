@@ -1,20 +1,15 @@
-package com.user.pojo;
-
-import lombok.Data;
+package com.user.pojo.vo;
 
 /**
  * @author liangzhu
- * @title: User
+ * @title: UserVo
  * @projectName busserver
  * @description: TODO
- * @date 2020-01-0815:53
+ * @date 2020-01-1408:50
  */
-@Data
-public class User {
-    private String userid;
+public class UserVo {
     private String loginName;
     private String password;
     private String userName;
     private int phone;
-    private int isUse;
 }

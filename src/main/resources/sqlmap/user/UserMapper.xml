@@ -5,18 +5,20 @@
 
 <mapper namespace="com.user.dao.UserDao">
     <resultMap id="userMap" type="com.user.pojo.User">
-        <id property="id" column="id"></id>
+        <id property="userid" column="userid"></id>
+        <result property="loginName" column="loginName"></result>
+        <result property="password" column="password"></result>
+        <result property="userName" column="userName"></result>
+        <result property="phone" column="phone"></result>
+        <result property="isUse" column="is_use"></result>
+        <result property="mtime" column="mtime"></result>
+        <result property="atime" column="atime"></result>
     </resultMap>
     <insert id="insert" parameterType="com.user.pojo.User">
-      insert into users (id,name) values (#{id,jdbcType=VARCHAR},#{name,jdbcType=VARCHAR})
+      insert into t_users (userid,loginName,password,userName,phone,is_use,mtime,atime)
+      values (#{userid,jdbcType=CHAR},#{loginName,jdbcType=VARCHAR},
+      #{password,jdbcType=VARCHAR},#{userName,jdbcType=VARCHAR},
+      #{phone,jdbcType=INTEGER},#{isUse,jdbcType=INTEGER},
+      NOW(),NOW())
     </insert>
-    <delete id="delete" parameterType="com.user.pojo.User">
-    delete from users where id = #{id,jdbcType=VARCHAR}
-    </delete>
-    <update id="update" parameterType="com.user.pojo.User">
-        update users set name = #{name,jdbcType=VARCHAR} where id = #{id,jdbcType=VARCHAR}
-    </update>
-    <select id="selectById" parameterType="java.lang.String" resultMap="userMap">
-        select * from users where id = #{id,jdbcType=VARCHAR}
-    </select>
 </mapper>

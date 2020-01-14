@@ -1,13 +1,13 @@
 package com.user.service;
 
-import com.user.pojo.User;
+import com.user.pojo.vo.UserVo;
 
 public interface UserService {
-    Object insert(User user);
+    Object insert(Object object);
 
-    Object delete(User user);
+    Object delete(Object object);
 
-    Object update(User user);
+    Object update(Object object);
 
     Object select(String id);
 

@@ -4,7 +4,11 @@ import com.common.result.Result;
 import com.common.result.ResultUtil;
 import com.user.dao.UserDao;
 import com.user.pojo.User;
+import com.user.pojo.vo.UserVo;
 import com.user.service.UserService;
+import com.utils.GetNowDate;
+import com.utils.GetUUID;
+import com.utils.MapperUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
@@ -27,19 +31,24 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional(propagation = Propagation.REQUIRES_NEW, isolation = Isolation.READ_COMMITTED)
-    public Object insert(User user) {
+    public Object insert(Object object) {
+        User user = MapperUtils.map(User.class, object);
+        user.setUserid(GetUUID.getUUID(64,true));
+        user.setIsUse(1);
         return new Result(ResultUtil.success(userDao.insert(user)));
     }
 
     @Override
     @Transactional(propagation = Propagation.REQUIRES_NEW, isolation = Isolation.READ_COMMITTED)
-    public Object delete(User user) {
+    public Object delete(Object object) {
+        User user = MapperUtils.map(User.class, object);
         return new Result(ResultUtil.success(userDao.delete(user)));
     }
 
     @Override
     @Transactional(propagation = Propagation.REQUIRES_NEW, isolation = Isolation.READ_COMMITTED)
-    public Object update(User user) {
+    public Object update(Object object) {
+        User user = MapperUtils.map(User.class, object);
         return new Result(ResultUtil.success(userDao.update(user)));
     }
 

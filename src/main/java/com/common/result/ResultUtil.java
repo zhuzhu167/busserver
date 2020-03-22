@@ -37,10 +37,11 @@ public class ResultUtil {
      * 自定义错误信息
      *
      * @param code
+     * @param 参数错误
      * @param msg
      * @return
      */
-    public static Result error(Integer code, String msg) {
+    public static Result error(Integer code, String 参数错误, String msg) {
         Result result = new Result();
         result.setStatus(code);
         result.setMsg(msg);

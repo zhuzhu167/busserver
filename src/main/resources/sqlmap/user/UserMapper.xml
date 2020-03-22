@@ -6,12 +6,8 @@
 <mapper namespace="com.user.dao.UserDao">
     <resultMap id="userMap" type="com.user.pojo.User">
         <id property="loginName" column="loginName"></id>
-        <result property="password" column="password"></result>
         <result property="userName" column="userName"></result>
         <result property="phone" column="phone"></result>
-        <result property="isUse" column="is_use"></result>
-        <result property="mtime" column="mtime"></result>
-        <result property="atime" column="atime"></result>
     </resultMap>
     <insert id="insert" parameterType="com.user.pojo.User">
       insert into t_users (loginName,password,userName,phone,is_use,mtime,atime)
@@ -20,4 +16,32 @@
       #{phone,jdbcType=CHAR},#{isUse,jdbcType=INTEGER},
       NOW(),NOW())
     </insert>
+    <update id="delete" parameterType="com.user.pojo.User">
+        update t_users
+        <set>
+            <if test="loginName!=null">
+                is_use = 0
+            </if>
+        </set>
+        where loginName = #{loginName,jdbcType=VARCHAR}
+    </update>
+    <update id="update" parameterType="com.user.pojo.User">
+        update t_users
+        <set>
+            <if test="loginName!=null">
+                <if test="userName!=null">
+                    userName = #{userName,jdbcType=VARCHAR}
+                </if>
+            </if>
+        </set>
+        where loginName = #{loginName,jdbcType=VARCHAR}
+    </update>
+    <select id="selectById" parameterType="com.user.pojo.User" resultType="com.user.pojo.vo.UserVo">
+        select * from  t_users
+        <where>
+            <if test="loginName!=null">
+                loginName = #{loginName,jdbcType=VARCHAR}
+            </if>
+        </where>
+    </select>
 </mapper>

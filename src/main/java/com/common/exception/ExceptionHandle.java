@@ -6,6 +6,7 @@ import com.sun.deploy.net.HttpResponse;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
 import org.springframework.dao.DuplicateKeyException;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
@@ -35,7 +36,13 @@ public class ExceptionHandle {
     public Result exceptionGet(Exception e, HttpServletResponse httpServletResponse) {
         LOGGER.error("---------------------------------异常捕捉---------------------------------");
         LOGGER.error(e.getClass().toString());
-        Result result = ResultUtil.error(ExceptionEnum.isEnumDefined(e.getClass().toString()));
+        LOGGER.error(e.getMessage());
+        Result result =new Result();
+        if (e instanceof MethodArgumentNotValidException) {
+            result = ExceptionEnum.isValidError(e);
+        } else {
+            result = ExceptionEnum.isEnumDefined(e);
+        }
         httpServletResponse.setStatus(result.getStatus());
         return result;
     }

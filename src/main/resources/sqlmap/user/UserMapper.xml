@@ -20,21 +20,23 @@
         update t_users
         <set>
             <if test="loginName!=null">
-                is_use = 0
+                is_use = 0,
+                mtime = now()
             </if>
         </set>
-        where loginName = #{loginName,jdbcType=VARCHAR}
+        where loginName = #{loginName,jdbcType=VARCHAR} and is_use != 0
     </update>
     <update id="update" parameterType="com.user.pojo.User">
         update t_users
         <set>
             <if test="loginName!=null">
                 <if test="userName!=null">
-                    userName = #{userName,jdbcType=VARCHAR}
+                    userName = #{userName,jdbcType=VARCHAR},
+                    mtime = now()
                 </if>
             </if>
         </set>
-        where loginName = #{loginName,jdbcType=VARCHAR}
+        where loginName = #{loginName,jdbcType=VARCHAR} and is_use != 0
     </update>
     <select id="selectById" parameterType="com.user.pojo.User" resultType="com.user.pojo.vo.UserVo">
         select * from  t_users
@@ -42,6 +44,7 @@
             <if test="loginName!=null">
                 loginName = #{loginName,jdbcType=VARCHAR}
             </if>
+                and is_use != 0
         </where>
     </select>
 </mapper>

@@ -1,7 +1,6 @@
-package com.user.service;
+package com.bus.service;
 
-
-public interface UserService {
+public interface RouteService {
     Object insert(Object object);
 
     Object delete(Object object);
@@ -9,5 +8,4 @@ public interface UserService {
     Object update(Object object);
 
     Object select(Object object);
-
 }

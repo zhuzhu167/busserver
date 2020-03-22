@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bus.dao.RouteDao">
+    <insert id="insert" parameterType="com.bus.pojo.Route">
+      insert into t_routes (rNum,rid,rName,rStyle,startT,endT,intervalT,charge,startSta,endSta,is_use,mtime,atime)
+      values (#{rNum,jdbcType=INTEGER},
+      #{rid,jdbcType=CHAR},#{rName,jdbcType=VARCHAR},
+      #{rStyle,jdbcType=VARCHAR},#{startT,jdbcType=VARCHAR},
+      #{endT,jdbcType=VARCHAR},#{intervalT,jdbcType=INTEGER},
+      #{charge,jdbcType=INTEGER},#{startSta,jdbcType=VARCHAR},
+      #{endSta,jdbcType=VARCHAR},#{isUse,jdbcType=INTEGER},
+      NOW(),NOW())
+    </insert>
+    <update id="delete" parameterType="com.bus.pojo.Route">
+        update t_routes
+        <set>
+            <if test="rNum!=null">
+                is_use = 0,
+            </if>
+            mtime = now()
+        </set>
+        where rNum = #{rNum,jdbcType=VARCHAR} and is_use != 0
+    </update>
+    <update id="update" parameterType="com.bus.pojo.Route">
+        update t_routes
+        <set>
+            <if test="rNum!=null">
+                <if test="rName!=null">
+                    rName = #{rName,jdbcType=VARCHAR},
+                </if>
+                <if test="rStyle!=null">
+                    rStyle = #{rStyle,jdbcType=VARCHAR},
+                </if>
+                <if test="startT!=null">
+                    startT = #{startT,jdbcType=VARCHAR},
+                </if>
+                <if test="endT!=null">
+                    endT = #{endT,jdbcType=VARCHAR},
+                </if>
+                <if test="intervalT!=null">
+                    intervalT = #{intervalT,jdbcType=INTEGER},
+                </if>
+                <if test="charge!=null">
+                    charge = #{charge,jdbcType=INTEGER},
+                </if>
+                <if test="startSta!=null">
+                    startSta = #{startSta,jdbcType=VARCHAR},
+                </if>
+                <if test="endSta!=null">
+                    endSta = #{endSta,jdbcType=VARCHAR},
+                </if>
+                mtime = now()
+            </if>
+        </set>
+        where rNum = #{rNum,jdbcType=VARCHAR} and is_use != 0
+    </update>
+    <select id="selectById" parameterType="com.bus.pojo.Route" resultType="com.bus.pojo.vo.RouteVo">
+        select * from  t_routes
+        <where>
+            <if test="rNum!=null">
+                rNum = #{rNum,jdbcType=VARCHAR}
+            </if>
+            and is_use != 0
+        </where>
+    </select>
+</mapper>

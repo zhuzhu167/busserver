@@ -33,7 +33,6 @@ public class UserServiceImpl implements UserService {
     @Transactional(propagation = Propagation.REQUIRES_NEW, isolation = Isolation.READ_COMMITTED)
     public Object insert(Object object) {
         User user = MapperUtils.map(User.class, object);
-        user.setIsUse(1);
         return new Result(ResultUtil.success(userDao.insert(user)));
     }
 
@@ -53,8 +52,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional(propagation = Propagation.REQUIRES_NEW, isolation = Isolation.READ_COMMITTED)
-    public Object select(Object object) {
-        User user = MapperUtils.map(User.class, object);
-        return new Result(ResultUtil.success(userDao.selectById(user)));
+    public Object select(String id) {
+        return new Result(ResultUtil.success(userDao.selectById(id)));
     }
 }

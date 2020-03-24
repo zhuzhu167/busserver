@@ -12,8 +12,8 @@ import java.util.Date;
  * @date 2020-01-1315:50
  */
 public class GetNowDate {
-    public static String getDate(){
+    public static String getDate(Date date){
         SimpleDateFormat sim=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        return sim.format(new Date());
+        return sim.format(date);
     }
 }

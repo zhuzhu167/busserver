@@ -6,6 +6,7 @@
 <mapper namespace="com.user.dao.FeedbackDao">
     <insert id="insert" parameterType="com.user.pojo.Feedback">
       insert into t_feedback (userid,content,atime)
-      values (#{userid,jdbcType=CHAR},#{content,jdbcType=VARCHAR},NOW())
+      select #{userid,jdbcType=CHAR},#{content,jdbcType=VARCHAR},NOW()
+      where exists (select loginName from t_users where loginName = #{userid,jdbcType=VARCHAR} and is_use != 0)
     </insert>
 </mapper>

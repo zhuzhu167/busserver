@@ -18,7 +18,7 @@ public interface UserDao {
 
     int update(User user);
 
-    UserVo selectById(User user);
+    UserVo selectById(String id);
 
 }
 

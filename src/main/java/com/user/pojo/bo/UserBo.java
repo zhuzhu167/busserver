@@ -6,7 +6,7 @@ import javax.validation.constraints.Size;
 
 @Data
 public class UserBo {
-    @Pattern(regexp = "^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,12}$", message = "账号应为6-12位英文数字字符")
+    @Pattern(regexp = "^[A-Za-z0-9]{6,12}$", message = "账号应为6-12位英文数字字符")
     private String loginName;
 
     @Pattern(regexp = "^.{8,20}$", message = "密码应为8-20位字符")

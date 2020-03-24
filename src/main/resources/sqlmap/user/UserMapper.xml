@@ -13,38 +13,30 @@
       insert into t_users (loginName,password,userName,phone,is_use,mtime,atime)
       values (#{loginName,jdbcType=VARCHAR},
       #{password,jdbcType=VARCHAR},#{userName,jdbcType=VARCHAR},
-      #{phone,jdbcType=CHAR},#{isUse,jdbcType=INTEGER},
+      #{phone,jdbcType=CHAR},1,
       NOW(),NOW())
     </insert>
     <update id="delete" parameterType="com.user.pojo.User">
         update t_users
         <set>
-            <if test="loginName!=null">
-                is_use = 0,
-                mtime = now()
-            </if>
+            is_use = 0,
+            mtime = now()
         </set>
         where loginName = #{loginName,jdbcType=VARCHAR} and is_use != 0
     </update>
     <update id="update" parameterType="com.user.pojo.User">
         update t_users
         <set>
-            <if test="loginName!=null">
-                <if test="userName!=null">
-                    userName = #{userName,jdbcType=VARCHAR},
-                    mtime = now()
-                </if>
-            </if>
+            userName = #{userName,jdbcType=VARCHAR},
+            mtime = now()
         </set>
         where loginName = #{loginName,jdbcType=VARCHAR} and is_use != 0
     </update>
-    <select id="selectById" parameterType="com.user.pojo.User" resultType="com.user.pojo.vo.UserVo">
+    <select id="selectById" parameterType="java.lang.String" resultType="com.user.pojo.vo.UserVo">
         select * from  t_users
         <where>
-            <if test="loginName!=null">
-                loginName = #{loginName,jdbcType=VARCHAR}
-            </if>
-                and is_use != 0
+            loginName = #{id,jdbcType=VARCHAR}
+            and is_use != 0
         </where>
     </select>
 </mapper>

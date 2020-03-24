@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bus.dao.NoticeDao">
+    <insert id="insert" parameterType="com.bus.pojo.Notice">
+        insert into t_notice (notice,is_use,atime,mtime)
+        values (#{notice,jdbcType=VARCHAR},1,NOW(),NOW())
+    </insert>
+    <update id="delete" parameterType="java.lang.Integer">
+        update t_notice
+        <set>
+            is_use = 0,
+            mtime = now()
+        </set>
+        where noticeid = #{id,jdbcType=INTEGER} and is_use != 0
+    </update>
+</mapper>

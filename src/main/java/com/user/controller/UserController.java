@@ -4,12 +4,10 @@ import com.common.result.Result;
 import com.user.pojo.Complaint;
 import com.user.pojo.Feedback;
 import com.user.pojo.Like;
+import com.user.pojo.Lost;
 import com.user.pojo.bo.UserBo;
 import com.user.pojo.vo.UserVo;
-import com.user.service.ComplaintService;
-import com.user.service.FeedbackService;
-import com.user.service.LikeService;
-import com.user.service.UserService;
+import com.user.service.*;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +37,8 @@ public class UserController {
     private FeedbackService feedbackService;
     @Autowired
     private LikeService likeService;
+    @Autowired
+    private LostService lostService;
 
     @PostMapping("insertUser")
     @ApiOperation(value="添加用户",response= Result.class)
@@ -69,9 +69,7 @@ public class UserController {
     @ResponseBody
     @ApiOperation(value="查找用户",response= Result.class)
     public Object selectUser(@NotNull @RequestParam(value = "id",required = true) String id) {
-        UserVo userVo = new UserVo();
-        userVo.setLoginName(id);
-        return userService.select(userVo);
+        return userService.select(id);
     }
 
     @PostMapping("/complaint")
@@ -93,5 +91,26 @@ public class UserController {
     @ApiOperation(value="用户点赞",response= Result.class)
     public Object like(@Valid @RequestBody Like like) {
         return likeService.insert(like);
+    }
+
+    @PostMapping("/lost")
+    @ResponseBody
+    @ApiOperation(value="失物招领",response= Result.class)
+    public Object lost(@Valid @RequestBody Lost lost) {
+        return lostService.insert(lost);
+    }
+
+    @DeleteMapping("/deleteLost")
+    @ResponseBody
+    @ApiOperation(value="删除招领",response= Result.class)
+    public Object deleteLost(@NotNull @RequestParam(value = "id",required = true) Integer id) {
+        return lostService.delete(id);
+    }
+
+    @GetMapping("/findLost")
+    @ResponseBody
+    @ApiOperation(value="查找招领",response= Result.class)
+    public Object findLost() {
+        return lostService.selectAll();
     }
 }

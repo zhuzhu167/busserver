@@ -12,5 +12,5 @@ public interface RouteDao {
 
     int update(Route route);
 
-    RouteVo selectById(Route route);
+    RouteVo selectById(String id);
 }

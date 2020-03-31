@@ -1,8 +1,53 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-        <!DOCTYPE mapper
-                PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-                "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.user.dao.UserDao">
-
+<mapper namespace="com.bus.dao.RouteStationDao">
+    <select id="getStations" resultType="java.lang.String">
+        SELECT
+            sname
+        FROM
+            t_route_station
+        GROUP BY
+	        sname
+    </select>
+    <select id="getRoutes" resultType="java.lang.String">
+        SELECT
+            rid
+        FROM
+            t_route_station
+        GROUP BY
+	        rid
+    </select>
+    <select id="getRouteAllStation" parameterType="java.lang.String" resultType="java.lang.String">
+        SELECT
+            sname
+        FROM
+	        t_route_station
+        WHERE
+            rid = #{id,jdbcType=VARCHAR}
+    </select>
+    <select id="getStationAllRoute" parameterType="java.lang.String" resultType="java.lang.String">
+        SELECT
+            rid
+        FROM
+	        t_route_station
+        WHERE
+            sname = #{id,jdbcType=VARCHAR}
+    </select>
+    <select id="getStationAllRouteMsg" parameterType="java.lang.String" resultType="com.bus.pojo.Route">
+        SELECT
+	        *
+        FROM
+	        t_routes as b,
+	        (SELECT
+	            rid
+            FROM
+	            t_route_station
+            WHERE
+	            sname = #{name, jdbcType=VARCHAR}) as a
+        WHERE
+	        b.rid = a.rid
+    </select>
 </mapper>

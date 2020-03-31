@@ -8,6 +8,6 @@ public interface UserService {
 
     Object update(Object object);
 
-    Object select(String id);
+    Object select(Object object);
 
 }

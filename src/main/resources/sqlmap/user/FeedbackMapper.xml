@@ -9,4 +9,12 @@
       select #{userid,jdbcType=CHAR},#{content,jdbcType=VARCHAR},NOW()
       where exists (select loginName from t_users where loginName = #{userid,jdbcType=VARCHAR} and is_use != 0)
     </insert>
+    <select id="selectMy" parameterType="java.lang.String" resultType="com.user.pojo.Feedback">
+        select
+            *
+        from
+            t_feedback
+        where
+            userid = #{id,jdbcType=CHAR}
+    </select>
 </mapper>

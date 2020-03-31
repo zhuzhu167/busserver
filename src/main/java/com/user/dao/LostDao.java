@@ -8,6 +8,8 @@ import java.util.List;
 @Repository
 public interface LostDao {
     int insert(Lost lost);
+
     int delete(Integer id);
+
     List<Lost> selectAll();
 }

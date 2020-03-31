@@ -3,6 +3,8 @@ package com.user.pojo;
 import lombok.Data;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
+import java.sql.Date;
+import java.sql.Timestamp;
 
 @Data
 public class Feedback {
@@ -11,4 +13,6 @@ public class Feedback {
 
     @NotNull(message = "内容不能为空")
     private String content;
+
+    private String atime;
 }

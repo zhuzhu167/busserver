@@ -57,13 +57,10 @@
         </set>
         where rNum = #{rNum,jdbcType=VARCHAR} and is_use != 0
     </update>
-    <select id="selectById" parameterType="com.bus.pojo.Route" resultType="com.bus.pojo.vo.RouteVo">
+    <select id="selectById" parameterType="java.lang.String" resultType="com.bus.pojo.vo.RouteVo">
         select * from  t_routes
         <where>
-            <if test="rNum!=null">
-                rNum = #{rNum,jdbcType=VARCHAR}
-            </if>
-            and is_use != 0
+            rNum = #{id,jdbcType=VARCHAR} and is_use != 0
         </where>
     </select>
 </mapper>

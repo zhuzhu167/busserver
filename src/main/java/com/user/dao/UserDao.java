@@ -1,4 +1,5 @@
 package com.user.dao;
+
 import com.user.pojo.*;
 import com.user.pojo.vo.UserVo;
 import org.springframework.stereotype.Repository;
@@ -18,7 +19,7 @@ public interface UserDao {
 
     int update(User user);
 
-    UserVo selectById(String id);
+    UserVo selectById(User user);
 
 }
 

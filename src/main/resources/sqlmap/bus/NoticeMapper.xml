@@ -16,4 +16,7 @@
         </set>
         where noticeid = #{id,jdbcType=INTEGER} and is_use != 0
     </update>
+    <select id="selectAll" resultType="com.bus.pojo.Notice">
+        select * from t_notice where is_use != 0
+    </select>
 </mapper>

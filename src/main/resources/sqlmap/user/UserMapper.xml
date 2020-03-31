@@ -32,10 +32,11 @@
         </set>
         where loginName = #{loginName,jdbcType=VARCHAR} and is_use != 0
     </update>
-    <select id="selectById" parameterType="java.lang.String" resultType="com.user.pojo.vo.UserVo">
-        select * from  t_users
+    <select id="selectById" parameterType="com.user.pojo.User" resultType="com.user.pojo.vo.UserVo">
+        select loginName,userName from  t_users
         <where>
-            loginName = #{id,jdbcType=VARCHAR}
+            loginName = #{loginName,jdbcType=VARCHAR}
+            and password = #{password,jdbcType=VARCHAR}
             and is_use != 0
         </where>
     </select>

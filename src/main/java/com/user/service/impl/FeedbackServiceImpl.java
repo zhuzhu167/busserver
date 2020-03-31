@@ -22,4 +22,10 @@ public class FeedbackServiceImpl implements FeedbackService {
     public Object insert(Object object) {
         return new Result(ResultUtil.success(feedbackDao.insert((Feedback) object)));
     }
+
+    @Override
+    @Transactional(propagation = Propagation.REQUIRES_NEW, isolation = Isolation.READ_COMMITTED)
+    public Object selectMy(String id) {
+        return new Result(ResultUtil.success(feedbackDao.selectMy(id)));
+    }
 }

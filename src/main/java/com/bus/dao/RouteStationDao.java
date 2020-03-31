@@ -1,15 +1,22 @@
 package com.bus.dao;
 
+import com.bus.pojo.Route;
 import com.bus.pojo.RouteStation;
 import org.springframework.stereotype.Repository;
 
 @Repository
 public interface RouteStationDao {
-    int insert(RouteStation routeStation);
+    String[] getStation(String id);
 
-    int delete(RouteStation routeStation);
+    String[] getRoute(String id);
 
-    int update(RouteStation routeStation);
+    String[] getStations();
 
-    RouteStation selectById(RouteStation routeStation);
+    String[] getRoutes();
+
+    String[] getRouteAllStation(String id);
+
+    String[] getStationAllRoute(String id);
+
+    Route[] getStationAllRouteMsg(String name);
 }

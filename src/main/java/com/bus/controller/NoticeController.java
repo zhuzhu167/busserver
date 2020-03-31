@@ -20,14 +20,20 @@ public class NoticeController {
     private NoticeService noticeService;
 
     @PostMapping("insertNotice")
-    @ApiOperation(value="添加公告",response= Result.class)
+    @ApiOperation(value = "添加公告", response = Result.class)
     public Object insertNotice(@Valid @RequestBody Notice notice) {
         return noticeService.insert(notice);
     }
 
     @PostMapping("deleteNotice")
-    @ApiOperation(value="删除公告",response= Result.class)
-    public Object deleteNotice(@NotNull @RequestParam(value = "id",required = true) Integer id) {
+    @ApiOperation(value = "删除公告", response = Result.class)
+    public Object deleteNotice(@NotNull @RequestParam(value = "id", required = true) Integer id) {
         return noticeService.delete(id);
+    }
+
+    @GetMapping("findNotice")
+    @ApiOperation(value = "查找公告", response = Result.class)
+    public Object findNotice() {
+        return noticeService.selectAll();
     }
 }

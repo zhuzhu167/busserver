@@ -6,7 +6,8 @@ import java.util.List;
 
 @Data
 public class RouteStation {
+    private String sid;
+    private String rid;
+    private String sname;
     private String rsid;
-    private int rid;
-    private List pStaId;
 }

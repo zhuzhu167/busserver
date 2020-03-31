@@ -28,4 +28,10 @@ public class NoticeServiceImpl implements NoticeService {
     public Object delete(Integer id) {
         return new Result(ResultUtil.success(noticeDao.delete(id)));
     }
+
+    @Override
+    @Transactional(propagation = Propagation.REQUIRES_NEW, isolation = Isolation.READ_COMMITTED)
+    public Object selectAll() {
+        return new Result(ResultUtil.success(noticeDao.selectAll()));
+    }
 }

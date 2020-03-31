@@ -1,11 +1,19 @@
 package com.bus.service;
 
+import com.bus.pojo.RouteStation;
+
 public interface RouteStationService {
-    Object insert(Object object);
+    String[] getStations();
 
-    Object delete(Object object);
+    String[] getRoutes();
 
-    Object update(Object object);
+    String[] getRouteAllStation(String id);
 
-    Object select(Object object);
+    Object reAllStation(String id);
+
+    String[] getStationAllRoute(String id);
+
+    Object lessTransfer(String start, String end);
+
+    Object getRoutesMsg(String name);
 }

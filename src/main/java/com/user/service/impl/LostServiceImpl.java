@@ -23,7 +23,7 @@ public class LostServiceImpl implements LostService {
     @Override
     @Transactional(propagation = Propagation.REQUIRES_NEW, isolation = Isolation.READ_COMMITTED)
     public Object insert(Object object) {
-        Lost lost = MapperUtils.map(Lost.class,object);
+        Lost lost = MapperUtils.map(Lost.class, object);
         return new Result(ResultUtil.success(lostDao.insert(lost)));
     }
 

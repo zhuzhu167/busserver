@@ -28,8 +28,11 @@ public class ResultUtil {
      * 提供给部分不需要出參的接口
      *
      * @return
+     * @param i
+     * @param 参数错误
+     * @param 站点不存在
      */
-    public static Result success() {
+    public static Result success(int i, String 参数错误, String 站点不存在) {
         return success(null);
     }
 
@@ -48,6 +51,8 @@ public class ResultUtil {
         result.setData(null);
         return result;
     }
+
+
 
     /**
      * 返回异常信息，在已知的范围内

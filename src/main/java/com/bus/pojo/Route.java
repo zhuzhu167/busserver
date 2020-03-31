@@ -14,5 +14,4 @@ public class Route {
     private int charge;
     private String startSta;
     private String endSta;
-    private int isUse;
 }

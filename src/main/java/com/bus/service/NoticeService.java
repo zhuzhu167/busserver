@@ -4,4 +4,6 @@ public interface NoticeService {
     Object insert(Object object);
 
     Object delete(Integer id);
+
+    Object selectAll();
 }

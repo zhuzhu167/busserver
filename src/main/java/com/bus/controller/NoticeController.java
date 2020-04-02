@@ -19,19 +19,19 @@ public class NoticeController {
     @Autowired
     private NoticeService noticeService;
 
-    @PostMapping("insertNotice")
+    @PostMapping("/insertNotice")
     @ApiOperation(value = "添加公告", response = Result.class)
     public Object insertNotice(@Valid @RequestBody Notice notice) {
         return noticeService.insert(notice);
     }
 
-    @PostMapping("deleteNotice")
+    @PostMapping("/deleteNotice")
     @ApiOperation(value = "删除公告", response = Result.class)
     public Object deleteNotice(@NotNull @RequestParam(value = "id", required = true) Integer id) {
         return noticeService.delete(id);
     }
 
-    @GetMapping("findNotice")
+    @GetMapping("/findNotice")
     @ApiOperation(value = "查找公告", response = Result.class)
     public Object findNotice() {
         return noticeService.selectAll();

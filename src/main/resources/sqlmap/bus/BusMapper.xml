@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bus.dao.BusDao">
+    <update id="init">
+        UPDATE t_bus
+        SET now_sta = ( SELECT sname FROM t_route_station WHERE rid = #{arg1} AND rsid = '1' ),
+            next_dis = ( SELECT dis FROM t_route_station WHERE rid = #{arg1} AND rsid = '1' ),
+            next_t = ( SELECT dis FROM t_route_station WHERE rid = #{arg1} AND rsid = '1' )/667,
+            now_sta_no = 1,
+            now_dis = 0,
+            start_t = curtime() ,
+            all_dis = ( SELECT sum( dis ) FROM t_route_station WHERE rid = #{arg1} ),
+            all_t = ( SELECT sum( dis ) / 667 FROM t_route_station WHERE rid = #{arg1} ),
+            late = 0
+        WHERE
+	        id = #{arg0} and rid = #{arg1}
+    </update>
+    <update id="update" parameterType="com.bus.pojo.Bus">
+        UPDATE t_bus
+        <set>
+            <if test="now_sta!=''and now_sta!=null">
+                now_sta = #{now_sta},
+            </if>
+            <if test="next_dis!=0">
+                next_dis = #{next_dis},
+            </if>
+            <if test="now_sta_no!=0">
+                now_sta_no = #{now_sta_no},
+            </if>
+            <if test="next_t!=0">
+                next_t = #{next_t},
+            </if>
+            now_dis = #{now_dis},
+            <if test="late!=0">
+                late = late + #{late},
+            </if>
+        </set>
+        WHERE
+        id = #{id}
+    </update>
+    <select id="select" parameterType="java.lang.String" resultType="com.bus.pojo.Bus">
+        select
+            *
+        from
+            t_bus
+        where
+            id = #{id}
+    </select>
+    <select id="selectNextSta" resultType="com.bus.pojo.Bus">
+        select
+	        sname as now_sta,dis as next_dis
+        from
+	        t_route_station
+        where
+	        rid = #{rid} and rsid = #{rsid}
+    </select>
+</mapper>

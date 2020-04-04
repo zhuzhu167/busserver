@@ -39,8 +39,6 @@ public class SwaggerConfig {
                 .title("api")//居民公交出行服务系统项目接口文档
                 .description("test")//居民公交出行服务系统项目接口测试
                 .version("1.0.0")
-                .termsOfServiceUrl("http://47.100.31.104:8080/busserver")
-                .license("")
                 .build();
     }
 }

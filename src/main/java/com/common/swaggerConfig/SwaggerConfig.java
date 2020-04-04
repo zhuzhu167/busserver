@@ -34,8 +34,8 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("居民公交出行服务系统项目接口文档")
-                .description("居民公交出行服务系统项目接口测试")
+                .title("api")//居民公交出行服务系统项目接口文档
+                .description("test")//居民公交出行服务系统项目接口测试
                 .version("1.0.0")
                 .termsOfServiceUrl("http://47.100.31.104:8080/")
                 .license("")

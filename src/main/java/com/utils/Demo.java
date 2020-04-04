@@ -88,13 +88,13 @@ public class Demo {
         return "获取失败";
     }
 
-    public static void main(String[] args) throws Exception {
-
-        BusAnalog busAnalog1 = new BusAnalog("A001", "1");
-        BusAnalog busAnalog2 = new BusAnalog("A002", "2");
-        Thread t1 = new Thread(busAnalog1);
-        Thread t2 = new Thread(busAnalog2);
-        t1.start();
-        t2.start();
-    }
+//    public static void main(String[] args) throws Exception {
+//
+//        BusAnalog busAnalog1 = new BusAnalog("A001", "1");
+//        BusAnalog busAnalog2 = new BusAnalog("A002", "2");
+//        Thread t1 = new Thread(busAnalog1);
+//        Thread t2 = new Thread(busAnalog2);
+//        t1.start();
+//        t2.start();
+//    }
 }

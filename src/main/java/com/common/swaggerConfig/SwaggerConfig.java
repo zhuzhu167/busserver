@@ -5,6 +5,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import springfox.documentation.builders.ApiInfoBuilder;
+import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.spi.DocumentationType;
@@ -21,15 +22,15 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @WebAppConfiguration
 @EnableSwagger2
 @EnableWebMvc
-@ComponentScan(basePackages = "com.baidu.dept.controller")
 public class SwaggerConfig {
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
+                .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.any())
-                .build()
-                .apiInfo(apiInfo());
+                .apis(RequestHandlerSelectors.basePackage("com.*.controller"))
+                .paths(PathSelectors.any())
+                .build();
     }
 
     private ApiInfo apiInfo() {
@@ -37,9 +38,8 @@ public class SwaggerConfig {
                 .title("api")//居民公交出行服务系统项目接口文档
                 .description("test")//居民公交出行服务系统项目接口测试
                 .version("1.0.0")
-                .termsOfServiceUrl("http://47.100.31.104:8080/")
+                .termsOfServiceUrl("http://47.100.31.104:8080/busserver")
                 .license("")
-                .licenseUrl("http://47.100.31.104:8080/")
                 .build();
     }
 }

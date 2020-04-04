@@ -18,7 +18,7 @@ import org.apache.http.util.EntityUtils;
 
 public class Demo {
     public void init(String id, String rid) throws Exception {
-        String url = "http://127.0.0.1:8080/busDemo/initBus" + "?id=" + id + "&rid=" + rid;
+        String url = "http://47.100.31.104:8080/busDemo/initBus" + "?id=" + id + "&rid=" + rid;
         // 创建默认的httpClient实例.
         HttpClient client = new DefaultHttpClient();
         // 创建httppost通过post方式访问
@@ -33,7 +33,7 @@ public class Demo {
     }
 
     public String get(String id) throws Exception {
-        String url = "http://127.0.0.1:8080/busDemo/getBus" + "?id=" + id;
+        String url = "http://47.100.31.104:8080/busDemo/getBus" + "?id=" + id;
         // 创建默认的httpClient实例.
         HttpClient client = new DefaultHttpClient();
         // 创建httppost通过post方式访问
@@ -50,7 +50,7 @@ public class Demo {
     }
 
     public void update(Bus bus) throws Exception {
-        String url = "http://127.0.0.1:8080/busDemo/updateBus";
+        String url = "http://47.100.31.104:8080/busDemo/updateBus";
         // 创建HttpClient实例
         HttpClient client = HttpClientBuilder.create().build();
         // 根据URL创建HttpPost实例
@@ -72,7 +72,7 @@ public class Demo {
     }
 
     public String arrive(String rid, String rsid) throws Exception {
-        String url = "http://127.0.0.1:8080/busDemo/busArrive" + "?rid=" + rid + "&rsid=" + rsid;
+        String url = "http://47.100.31.104:8080/busDemo/busArrive" + "?rid=" + rid + "&rsid=" + rsid;
         // 创建默认的httpClient实例.
         HttpClient client = new DefaultHttpClient();
         // 创建httppost通过post方式访问

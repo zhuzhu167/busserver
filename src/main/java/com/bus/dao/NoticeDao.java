@@ -1,7 +1,6 @@
 package com.bus.dao;
 
 import com.bus.pojo.Notice;
-import com.bus.pojo.Route;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

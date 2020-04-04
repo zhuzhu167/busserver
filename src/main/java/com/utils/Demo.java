@@ -1,13 +1,6 @@
 package com.utils;
 
-
-import java.util.Random;
-import java.util.concurrent.TimeUnit;
-
-import com.alibaba.fastjson.JSON;
 import com.bus.pojo.Bus;
-import com.bus.pojo.RouteStation;
-import com.bus.pojo.vo.BusVo;
 import com.google.common.base.Charsets;
 import net.sf.json.JSONObject;
 import org.apache.http.HttpEntity;

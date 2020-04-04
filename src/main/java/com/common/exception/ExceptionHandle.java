@@ -1,14 +1,11 @@
 package com.common.exception;
 
 import com.common.result.Result;
-import com.common.result.ResultUtil;
-import com.sun.deploy.net.HttpResponse;
+
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
-import org.springframework.dao.DuplicateKeyException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
-
 import javax.servlet.http.HttpServletResponse;
 
 

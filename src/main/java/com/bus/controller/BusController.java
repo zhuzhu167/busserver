@@ -1,10 +1,7 @@
 package com.bus.controller;
 
 import com.bus.pojo.Bus;
-import com.bus.pojo.RouteStation;
-import com.bus.pojo.vo.BusVo;
 import com.bus.service.BusService;
-import com.common.result.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

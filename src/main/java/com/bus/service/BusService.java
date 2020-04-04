@@ -1,7 +1,5 @@
 package com.bus.service;
 
-import com.bus.pojo.Bus;
-
 public interface BusService {
     Object init(String id, String rid);
 

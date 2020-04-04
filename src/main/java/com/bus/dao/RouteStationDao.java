@@ -1,7 +1,6 @@
 package com.bus.dao;
 
 import com.bus.pojo.Route;
-import com.bus.pojo.RouteStation;
 import org.springframework.stereotype.Repository;
 
 @Repository

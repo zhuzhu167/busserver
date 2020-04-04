@@ -2,6 +2,7 @@ package com.common.swaggerConfig;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -19,18 +20,18 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * @description: TODO
  * @date 2020-01-1321:14
  */
-@WebAppConfiguration
+
 @EnableSwagger2
-@EnableWebMvc
+@Configuration
 public class SwaggerConfig {
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
-                .apiInfo(apiInfo())
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.*.controller"))
                 .paths(PathSelectors.any())
-                .build();
+                .build()
+                .apiInfo(apiInfo());
     }
 
     private ApiInfo apiInfo() {

@@ -45,6 +45,21 @@ public class RouteStationServiceImpl implements RouteStationService {
     }
 
     @Override
+    public Object getSEStations(String sta, String end, String rid) {
+        return new Result(ResultUtil.success(routeStationDao.getSEStations(sta, end, rid)));
+    }
+
+    @Override
+    public Object getSEStationsTran(String sta, String end, String tran, String rid, String ridTran) {
+        return new Result(ResultUtil.success(routeStationDao.getSEStationsTran(sta, end, tran, rid, ridTran)));
+    }
+
+    @Override
+    public Object getXStations(String name) {
+        return new Result(ResultUtil.success(routeStationDao.getXStations(name)));
+    }
+
+    @Override
     public Result lessTransfer(String start, String end) {
         boolean start_flag, end_flag;
         start_flag = false;

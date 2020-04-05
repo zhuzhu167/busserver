@@ -50,4 +50,35 @@
         WHERE
 	        b.rid = a.rid
     </select>
+    <select id="getSEStations" resultType="java.lang.String">
+        SELECT
+            sname
+        FROM
+            t_route_station
+        WHERE
+            rsid &gt;= ( SELECT rsid FROM t_route_station WHERE sname = #{sta} AND rid = #{rid} ) + 0
+            AND rsid &lt;= ( SELECT rsid FROM t_route_station WHERE sname = #{end} AND rid = #{rid} ) + 0
+            AND rid = #{rid}
+    </select>
+    <select id="getSEStationsTran" resultType="java.lang.String">
+        SELECT
+            sname
+        FROM
+            t_route_station
+        WHERE
+            rsid &gt;= ( SELECT rsid FROM t_route_station WHERE sname = #{sta} AND rid = #{rid} ) + 0
+            AND rsid &lt;= ( SELECT rsid FROM t_route_station WHERE sname = #{tran} AND rid = #{rid} ) + 0 AND rid = #{rid}
+            UNION
+            SELECT sname FROM t_route_station WHERE rsid &gt;= ( SELECT rsid FROM t_route_station WHERE sname = #{tran} AND rid = #{ridTran} ) + 0
+            AND rsid &lt;= ( SELECT rsid FROM t_route_station WHERE sname = #{end} AND rid = #{ridTran} ) + 0
+            AND rid = #{ridTran}
+    </select>
+    <select id="getXStations" resultType="com.bus.pojo.RouteStation">
+        SELECT
+	        *
+        FROM
+	        t_route_station
+        WHERE
+	        sname LIKE concat('%',#{name},'%') or rid = #{name}
+    </select>
 </mapper>

@@ -48,4 +48,25 @@ public class RouteStationController {
     public Object getStations(@NotNull @RequestParam(value = "id") String id) {
         return routeStationService.reAllStation(id);
     }
+
+    @GetMapping("/getSEStations")
+    @ResponseBody
+    @ApiOperation(value = "获取两点间站点-不换乘", response = Result.class)
+    public Object getSEStations(@NotNull @RequestParam(value = "sta") String sta, @NotNull @RequestParam(value = "end") String end, @NotNull @RequestParam(value = "rid") String rid) {
+        return routeStationService.getSEStations(sta, end, rid);
+    }
+
+    @GetMapping("/getSEStationsTran")
+    @ResponseBody
+    @ApiOperation(value = "获取两点间站点-换乘", response = Result.class)
+    public Object getSEStationsTran(@NotNull @RequestParam(value = "sta") String sta, @NotNull @RequestParam(value = "end") String end, @NotNull @RequestParam(value = "tran") String tran, @NotNull @RequestParam(value = "rid") String rid, @NotNull @RequestParam(value = "ridTran") String ridTran) {
+        return routeStationService.getSEStationsTran(sta, end, tran, rid, ridTran);
+    }
+
+    @GetMapping("/getXStations")
+    @ResponseBody
+    @ApiOperation(value = "站点模糊查询", response = Result.class)
+    public Object getXStations(@NotNull @RequestParam(value = "name") String name) {
+        return routeStationService.getXStations(name);
+    }
 }
